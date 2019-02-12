@@ -1,1 +1,1 @@
-ToDo = Struct.new(:task, :complete, :notes, :location)
+ToDo = Struct.new(:task, :notes, :location, :complete)
