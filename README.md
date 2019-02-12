@@ -1,2 +1,2 @@
 # to-do-list
-Here's a quick-n-easy to do list written in Ruby!
+Here's a quick-n-easy to-do list written in Ruby!
