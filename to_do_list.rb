@@ -1,3 +1,4 @@
+require_relative 'to_do'
 class ToDoList
   attr_accessor :name, :list
   def initialize(name="To-do")
