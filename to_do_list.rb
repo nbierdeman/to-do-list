@@ -5,7 +5,7 @@ class ToDoList
     @name = name
     @list = []
   end
-  def new(task, notes=nil, location=nil, complete=false)
+  def new_item(task, notes=nil, location=nil, complete=false)
     list << ToDo.new(task, notes, location, complete)
   end
 end
