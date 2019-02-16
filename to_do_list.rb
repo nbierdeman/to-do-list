@@ -16,4 +16,9 @@ class ToDoList
       to_do.complete = true if to_do.values.include?(identifier)
     end
   end
+  def mark_incomplete(identifier)
+    list.each do |to_do|
+      to_do.complete = false if to_do.values.include?(identifier)
+    end
+  end
 end
