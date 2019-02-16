@@ -9,6 +9,6 @@ class ToDoList
     list << ToDo.new(task, notes, location, complete)
   end
   def remove_item(identifier)
-    list.delete_if { |item| item.values.include?(identifier) }
+    list.delete_if { |to_do| to_do.values.include?(identifier) }
   end
 end
