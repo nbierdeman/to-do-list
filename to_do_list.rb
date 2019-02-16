@@ -8,4 +8,7 @@ class ToDoList
   def add_item(task, notes=nil, location=nil, complete=false)
     list << ToDo.new(task, notes, location, complete)
   end
+  def remove_item(identifier)
+    list.delete_if { |item| item.values.include?(identifier) }
+  end
 end
