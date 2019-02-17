@@ -11,7 +11,7 @@ class ToDoList
   def remove_item(identifier)
     list.delete_if { |to_do| to_do.values.include?(identifier) }
   end
-  def mark_status(identifier, status=true)
+  def mark_complete(identifier, status=true)
     list.each do |to_do|
       to_do.complete = status if to_do.values.include?(identifier)
     end
