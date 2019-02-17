@@ -19,4 +19,9 @@ class ToDoList
       to_do.complete = status if to_do.values.include?(identifier)
     end
   end
+  def find(identifier)
+      list.collect do |to_do|
+        to_do if to_do.values.include?(identifier)
+      end.compact
+  end
 end
