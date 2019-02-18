@@ -18,4 +18,15 @@ module ListManager
         to_do if to_do.values.include?(identifier)
       end.compact
   end
+  def print_list(status=false)
+    printable = list.collect do |to_do|
+      to_do if to_do.complete == status
+    end.compact
+    printable.each do |item|
+      puts "Task: #{item.task}"
+      puts "Notes: #{item.notes}"
+      puts "Location: #{item.location}"
+      puts ""
+    end
+  end
 end
