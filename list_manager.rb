@@ -18,9 +18,9 @@ module ListManager
         to_do if to_do.values.include?(identifier)
       end.compact
   end
-  def print_list(status=false)
+  def print_list(complete=false)
     printable = list.collect do |to_do|
-      to_do if to_do.complete == status
+      to_do if to_do.complete == complete
     end.compact
     printable.each do |item|
       puts "Task: #{item.task}"
