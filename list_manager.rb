@@ -30,11 +30,7 @@ module ListManager
     end
   end
   def print_all
-    list.each do |item|
-      puts "Task: #{item.task}"
-      puts "Notes: #{item.notes}"
-      puts "Location: #{item.location}"
-      puts ""
-    end
+    print_list
+    print_list(true)
   end
 end
