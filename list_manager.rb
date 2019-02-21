@@ -19,14 +19,13 @@ module ListManager
       end.compact
   end
   def print_list(complete=false)
-    printable = list.collect do |to_do|
-      to_do if to_do.complete == complete
-    end.compact
-    printable.each do |item|
-      puts "Task: #{item.task}"
-      puts "Notes: #{item.notes}"
-      puts "Location: #{item.location}"
-      puts ""
+    list.each do |to_do|
+      if to_do.complete == complete
+        puts "Task: #{to_do.task}"
+        puts "Notes: #{to_do.notes}"
+        puts "Location: #{to_do.location}"
+        puts ""
+      end
     end
   end
   def print_all
