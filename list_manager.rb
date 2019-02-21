@@ -1,8 +1,8 @@
 module ListManager
-  def add_item(task, notes=nil, location=nil, complete=false)
+  def add_to_do(task, notes=nil, location=nil, complete=false)
     list << ToDo.new(task, notes, location, complete)
   end
-  def remove_item(identifier)
+  def remove_to_do(identifier)
     list.delete_if { |to_do| to_do.values.include?(identifier) }
   end
   def remove_all
