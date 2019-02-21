@@ -29,10 +29,10 @@ module ListManager
     end
   end
   def print_all
-    list.each do |item|
-      puts "Task: #{item.task}"
-      puts "Notes: #{item.notes}"
-      puts "Location: #{item.location}"
+    list.each do |to_do|
+      puts "Task: #{to_do.task}"
+      puts "Notes: #{to_do.notes}"
+      puts "Location: #{to_do.location}"
       puts ""
     end
   end
