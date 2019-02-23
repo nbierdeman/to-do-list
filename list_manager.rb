@@ -1,6 +1,7 @@
 module ListManager
   def add_to_do(task, notes=nil, location=nil, complete=false)
     list << ToDo.new(task, notes, location, complete)
+    puts "#{task.capitalize} added to #{self.name}!"
   end
   def remove_to_do(identifier)
     list.delete_if { |to_do| to_do.values.include?(identifier) }
