@@ -4,10 +4,11 @@ module ListManager
     puts "'#{task}' added to '#{self.name}.'"
   end
   def remove_to_do(identifier)
+    removed = list.collect do |to_do|
+      to_do if to_do.values.include?(identifier)
+    end.compact
+    removed.each { |to_do| puts "'#{to_do.task}' removed from '#{self.name}.'" }
     list.delete_if { |to_do| to_do.values.include?(identifier) }
-    message = "Items matching '#{identifier.to_s}' have been removed "\
-              "from '#{self.name}.'"
-    puts message
   end
   def remove_all
     list.clear
