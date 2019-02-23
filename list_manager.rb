@@ -15,10 +15,10 @@ module ListManager
     puts "All to-do's have been removed from '#{self.name}.'"
   end
   def mark_complete(identifier, status=true)
-    completed = list.collect do |to_do|
+    complete = list.collect do |to_do|
       to_do if to_do.values.include?(identifier)
     end.compact
-    completed.each do |to_do|
+    complete.each do |to_do|
       puts "'#{to_do.task}' marked as complete in '#{self.name}.'"
     end
     list.each do |to_do|
