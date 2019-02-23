@@ -19,7 +19,11 @@ module ListManager
       to_do if to_do.values.include?(identifier)
     end.compact
     complete.each do |to_do|
-      puts "'#{to_do.task}' marked as complete in '#{self.name}.'"
+      if to_do.complete == false
+        puts "'#{to_do.task}' marked as complete in '#{self.name}.'"
+      else
+        puts "'#{to_do.task}' marked as incomplete in '#{self.name}.'"
+      end
     end
     list.each do |to_do|
       to_do.complete = status if to_do.values.include?(identifier)
