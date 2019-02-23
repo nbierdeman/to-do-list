@@ -12,7 +12,7 @@ module ListManager
   end
   def remove_all
     list.clear
-    puts "All items have been removed from #{self.name}."
+    puts "All to-do's have been removed from #{self.name}."
   end
   def mark_complete(identifier, status=true)
     list.each do |to_do|
