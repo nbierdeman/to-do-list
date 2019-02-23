@@ -5,6 +5,7 @@ module ListManager
   end
   def remove_to_do(identifier)
     list.delete_if { |to_do| to_do.values.include?(identifier) }
+    puts "Items matching '#{identifier.to_s}' have been removed from '#{self.name}.'"
   end
   def remove_all
     list.clear
