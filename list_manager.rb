@@ -22,9 +22,10 @@ module ListManager
     puts message
   end
   def find(identifier)
-      list.collect do |to_do|
+      found = list.collect do |to_do|
         to_do if to_do.values.include?(identifier)
       end.compact
+      found.each { |to_do| puts "'#{to_do.task}' found in '#{self.name}.'" }
   end
   def print_list(complete=false)
     list.each do |to_do|
