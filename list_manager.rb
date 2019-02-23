@@ -15,6 +15,9 @@ module ListManager
     list.each do |to_do|
       to_do.complete = status if to_do.values.include?(identifier)
     end
+    message = "Items matching '#{identifier.to_s}' in '#{self.name}' "\
+              "have been marked as complete."
+    puts message
   end
   def find(identifier)
       list.collect do |to_do|
