@@ -29,12 +29,6 @@ module ListManager
       to_do.complete = status if to_do.values.include?(identifier)
     end
   end
-  def find(identifier)
-      found = list.collect do |to_do|
-        to_do if to_do.values.include?(identifier)
-      end.compact
-      found.each { |to_do| puts "'#{to_do.task}' found in '#{self.name}.'" }
-  end
   def print_list(complete=false)
     list.each do |to_do|
       if to_do.complete == complete
