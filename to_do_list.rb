@@ -25,7 +25,6 @@ class ToDoList
           found_to_dos << to_do if to_do.values.include?(identifier)
         end
       end
-      found_lists.flatten!
       # output user message
       if found_to_dos.any?
         found_to_dos.each do |to_do|
