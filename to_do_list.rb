@@ -16,7 +16,7 @@ class ToDoList
       ObjectSpace.each_object(self) do |instance|
         all_to_do_lists << instance
       end
-      # create 'found_lists' array of to-do lists that have properties that match the identifier
+      # create 'found_lists' array of to-do lists that match the identifier
       # create 'found_to_dos' array of to-do's that match the identifier
       all_to_do_lists.each do |to_do_list|
         found_lists << to_do_list if to_do_list.name == identifier
