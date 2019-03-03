@@ -10,22 +10,19 @@ class ToDoList
   class << self
     def find(identifier)
       all_to_do_lists = []
-      found_to_dos = []
       found_lists = []
+      found_to_dos = []
       # create array of all to-do lists
       ObjectSpace.each_object(self) do |instance|
         all_to_do_lists << instance
       end
+      # create array of to-do lists that have properties that match the identifier
       # create array of to-do's that match the identifier
       all_to_do_lists.each do |to_do_list|
+        found_lists << to_do_list if to_do_list.name == identifier
         to_do_list.list.each do |to_do|
+          found_lists << to_do_list if to_do.values.include?(identifier)
           found_to_dos << to_do if to_do.values.include?(identifier)
-        end
-      end
-      # create array of to-do lists that have to-do's that match the identifier
-      found_to_dos.each do |to_do|
-        found_lists << all_to_do_lists.select do |to_do_list|
-          to_do_list if to_do_list.list.include?(to_do)
         end
       end
       found_lists.flatten!
