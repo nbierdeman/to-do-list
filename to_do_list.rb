@@ -42,14 +42,6 @@ class ToDoList
         end
       end
       puts "'#{identifier}' not found." if (found_list_names + found_lists + found_to_dos).count == 0
-      #puts ""
-      #puts all_to_do_lists.inspect
-      #puts ""
-      #puts found_list_names.inspect
-      #puts ""
-      #puts found_lists.inspect
-      #puts ""
-      #puts found_to_dos.inspect
     end
   end
 end
