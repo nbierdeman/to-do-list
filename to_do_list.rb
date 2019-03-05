@@ -28,14 +28,28 @@ class ToDoList
         end
       end
       # output user message
-      if found_to_dos.any?
-        found_to_dos.each do |to_do|
-          puts "'#{to_do.task}' found in '#{found_lists[0].name}.'"
-          found_lists.shift
+      case identifier
+      when found_list_names.each do |to_do_list|
+        puts "A list named '#{identifier}' "\
+        "was found." if to_do_list.name == identifier
         end
-      else
-        puts "No match found."
+      when found_lists.each do |to_do_list|
+        puts "An item matching '#{identifier}' "\
+        "was found in a list named "\
+        "'#{to_do_list.name}.'" if to_do_list.list.each do |to_do|
+          to_do.values.include?(identifier)
+          end
+        end
       end
+      puts "'#{identifier}' not found." if (found_list_names + found_lists + found_to_dos).count == 0
+      #puts ""
+      #puts all_to_do_lists.inspect
+      #puts ""
+      #puts found_list_names.inspect
+      #puts ""
+      #puts found_lists.inspect
+      #puts ""
+      #puts found_to_dos.inspect
     end
   end
 end
