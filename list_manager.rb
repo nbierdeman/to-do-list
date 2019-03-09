@@ -34,24 +34,25 @@ module ListManager
       to_do.complete = status if to_do.values.include?(identifier)
     end
   end
-  # print complete or incomplete to-dos
-  def print_list(complete=false)
-    list.each do |to_do|
-      if to_do.complete == complete
+  # print complete, incomplete, or all to-dos
+  def print_list(complete=false, all=false)
+    case all
+    when false
+      list.each do |to_do|
+        if to_do.complete == complete
+          puts "Task: #{to_do.task}"
+          puts "Notes: #{to_do.notes}"
+          puts "Location: #{to_do.location}"
+          puts ""
+        end
+      end
+    when true
+      list.each do |to_do|
         puts "Task: #{to_do.task}"
         puts "Notes: #{to_do.notes}"
         puts "Location: #{to_do.location}"
         puts ""
       end
-    end
-  end
-  # print all to-dos
-  def print_all
-    list.each do |to_do|
-      puts "Task: #{to_do.task}"
-      puts "Notes: #{to_do.notes}"
-      puts "Location: #{to_do.location}"
-      puts ""
     end
   end
 end
