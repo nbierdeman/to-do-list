@@ -8,6 +8,7 @@ class ToDoList
     @list = []
   end
   class << self
+    # search ToDoList names and ToDo parameters
     def find(identifier)
       all_to_do_lists = []
       found_list_names = []
